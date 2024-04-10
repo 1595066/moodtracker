@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./dexie.min.js"></script>
+</head>
+<body>
+  
+  <h1>Mood Tracker</h1>
+        <button class="button button1">User Information</button>
+        <button class="button button2">Today's Log</button>
+
+        <div class="calendar-container">
+            <header class="calendar-header">
+                <p class="calendar-current-date"></p>
+                <div class="calendar-navigation">
+                    <span id="calendar-prev" class="material-symbols-rounded">chevron_left</span>
+                    <span id="calendar-next" class="material-symbols-rounded">chevron_right</span>
+                </div>
+            </header>
+    
+            <div class="calendar-body">
+                <ul class="calendar-weekdays">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="calendar-dates"></ul>
+            </div>
+        </div>
+
+    <nav class="navbar">
+        <h1 class="logo">Mood Tracker</h1>
+    </nav>
+    <div class="container">
+        <form id="itemForm" class="form">
+            <label for="dateInput" class="form-label">Date:</label>
+            <input type="date" id="dateInput" class="form-input" required>
+            
+            <label for="moodInput" class="form-label">Mood:</label>
+            <input type="number" id="moodInput" class="form-input" value="5" required>
+            
+            <label for="energyInput" class="form-label">Energy Level:</label>
+            <input type="number" id="energyInput" class="form-input" value="5" required>
+
+            <button type="submit" id="addEntryButton" class="form-button">
+                Add entry
+            </button>
+        </form>
+    </div>
+
+    <div id="itemsDiv" class="items-container">
+        <div class="item">
+            <input type="checkbox" class="checkbox" checked>
+
+            <div class="entry-item">
+                <p class="entry-date">2/10/24</p>
+                <p class="entry-details">Mood: 5 | Energy Level: 5</p>
+            </div>
+
+            <button class="delete-button">X</button>
+        </div>
+        <div id="totalEntriesDiv" class="total-entries">Total Entries: 1</div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
